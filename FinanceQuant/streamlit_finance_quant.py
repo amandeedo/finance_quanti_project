@@ -40,8 +40,8 @@ def plot_histogram(ticker, df):
     return plt
 
 #Importation des données 
-df_return=pd.read_excel(r".\Data_avec_feuille_T.xlsx", sheet_name="Rendements")
-df_return_correlation=pd.read_excel(r".\Data projet.xlsx", sheet_name="Returns")
+df_return=pd.read_excel(r"./FinanceQuant/Data_avec_feuille_T.xlsx", sheet_name="Rendements")
+df_return_correlation=pd.read_excel(r"./FinanceQuant/Data projet.xlsx", sheet_name="Returns")
 df_return_correlation=df_return_correlation.set_index("Stock").T
 df_return_correlation.index = pd.to_datetime(df_return_correlation.index)
 # Traitement des valeurs manquantes 
@@ -95,7 +95,7 @@ if menu == "Description des données":
     elif sub_menu == "Performance cumulée des titres (base100)":
         st.header("Performance cumulée des titres (base100)")
         #importer la données base 100
-        df_return_base100=pd.read_excel(r".\Data_avec_feuille_T.xlsx", sheet_name="cumule")
+        df_return_base100=pd.read_excel(r"./FinanceQuant/Data_avec_feuille_T.xlsx", sheet_name="cumule")
         df_base100=df_return_base100.melt(id_vars="Date")
         fig = plt.figure(figsize=(22, 16))
         #Creation du graphique base 100
@@ -167,7 +167,7 @@ elif menu == "Clustering":
     sub_menu_clustering = st.sidebar.radio("Sous-section Clustering", ["K-Means returns", "CAH ROI"])
     if sub_menu_clustering == "K-Means returns":
         st.header("Clustering à l'aide de l'algorithme K-Means")
-        df_return=pd.read_excel(r".\Data_projet_finance.xlsx", sheet_name="Returns")
+        df_return=pd.read_excel(r"./FinanceQuant/Data_projet_finance.xlsx", sheet_name="Returns")
         
         st.write("<div style='text-align: justify'><p>Dans cette partie, nous allons donc implémenter l'algorithme de clustering K-means sur les rendements des 58 actions dans la base de données. Cette partie nous permettra d'afficher les différents résultats obtenus : les méthodologies utilisées seront évoqués plus en détail dans le rapport rédigé</div>", unsafe_allow_html=True)
         
@@ -235,7 +235,7 @@ elif menu == "Clustering":
 
         st.write("<div style='text-align: justify'><p>Une fois l'algorithme K-means implémenté, il est possible de représenter les 3 différents clusters sur un graphique. Nous avons choisi de les représenter sur un plan mettant en relation les deux premières composantes d'une analyse en composante principales. Les différents clusters sont caractérisés par des couleurs différentes.</div>", unsafe_allow_html=True)
         
-        df = pd.read_excel(r'./Data_projet_finance.xlsx', sheet_name='Returns')
+        df = pd.read_excel(r"./FinanceQuant/Data_projet_finance.xlsx", sheet_name='Returns')
         
         df = df.set_index(df.columns[0]) #remplacement du nom des colonnes
     
@@ -399,7 +399,7 @@ elif menu == "Clustering":
         import matplotlib.pyplot as plt 
         import seaborn as sns
 
-        roic = pd.read_excel(r"./Data_projet_nettoye.xlsx",sheet_name='ROIC') #import de la base des données ROIC
+        roic = pd.read_excel(r"./FinanceQuant/Data_projet_nettoye.xlsx",sheet_name='ROIC') #import de la base des données ROIC
         roic = roic.drop([0,1]) #suppression des premières lignes vides
         roic = roic.set_index('Stock') #on met les dates en index
         
@@ -449,7 +449,7 @@ elif menu == "Moyenne-Variance":
                  
         st.write("<div style='text-align: justify'><p>On va d'abord commencer par représenter les actions sur un plan rendement-volatilité. En plus de ces actions, on représentera également la frontière d'efficience, correspondant à l'ensemble des portefeuilles pouvant être créés à partir des actions de la base de données maximisant les rendements, pour chaque niveau de risque.</div>", unsafe_allow_html=True)
                  
-        pivot_stock_return = pd.read_excel(r'./Data_projet_finance.xlsx',sheet_name='Returns')
+        pivot_stock_return = pd.read_excel(r"./FinanceQuant/Data_projet_finance.xlsx',sheet_name='Returns")
         pivot_stock_return = pivot_stock_return.T
         pivot_stock_return = pivot_stock_return.reset_index()
         pivot_stock_return.columns = pivot_stock_return.iloc[0]
@@ -488,7 +488,7 @@ elif menu == "Moyenne-Variance":
         st.write("<div style='text-align: justify'><p>Ensuite, il sera intéressant de représenter l'ensemble des portefeuilles potentiellement construisables à partir de ces actions sur ce même graphique. C'est ce que nous allons réaliser dans le graphique ci-dessous. Dans le cadre de la réalisation de ce graphique sous Python, une limite de 10 000 portefeuilles représentable est fixée. Cependant, une autre représentation de l'ensemble des portefeuilles pourra être retrouvé dans le rapport final associé à cette application</div>", unsafe_allow_html=True)
         
         
-        pivot_stock_return = pd.read_excel(r'./Data_projet_finance.xlsx',sheet_name='Returns')
+        pivot_stock_return = pd.read_excel(r"./FinanceQuant/Data_projet_finance.xlsx",sheet_name='Returns')
         pivot_stock_return = pivot_stock_return.T
         pivot_stock_return = pivot_stock_return.reset_index()
         pivot_stock_return.columns = pivot_stock_return.iloc[0]
@@ -531,7 +531,7 @@ elif menu == "Moyenne-Variance":
         
         st.write("<div style='text-align: justify'><p>Nous commencerons par le représenter dans un plan rendement-volatilité</div>", unsafe_allow_html=True)
         
-        pivot_stock_return = pd.read_excel('Data_projet_finance.xlsx',sheet_name='Returns')
+        pivot_stock_return = pd.read_excel(r"./FinanceQuant/Data_projet_finance.xlsx",sheet_name='Returns')
         pivot_stock_return = pivot_stock_return.T
         pivot_stock_return = pivot_stock_return.reset_index()
         pivot_stock_return.columns = pivot_stock_return.iloc[0]
@@ -597,7 +597,7 @@ elif menu == "Moyenne-Variance":
         st.header("Représentation du portefeuille équiponderant")
         st.write("<div style='text-align: justify'><p>Enfin, nous allons construire un portefeuille équipondérant. Un portefeuille équipondérant est un portefeuille composé de toutes les actions disponibles avec un poids égal. Dans le cadre de notre projet, cela correspond à l'établissement d'un portefeuille contenant les 58 actions de la base de données avec un poids similaire équivalent à 1/58 soit environ 1,72%. Ainsi, si un investisseur souhaitait investir une somme de 1000$, il faudrait investir 17,2 dollars dans chacune des 58 stocks pour constituer un portefeuille équipondéré regroupant l'ensemble des actions.</div>", unsafe_allow_html=True)
         
-        pivot_stock_return = pd.read_excel('Data_projet_finance.xlsx',sheet_name='Returns')
+        pivot_stock_return = pd.read_excel(r"./FinanceQuant/Data_projet_finance.xlsx",sheet_name='Returns')
         pivot_stock_return = pivot_stock_return.T
         pivot_stock_return = pivot_stock_return.reset_index()
         pivot_stock_return.columns = pivot_stock_return.iloc[0]
