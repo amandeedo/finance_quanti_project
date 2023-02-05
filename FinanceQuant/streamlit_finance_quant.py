@@ -449,7 +449,7 @@ elif menu == "Moyenne-Variance":
                  
         st.write("<div style='text-align: justify'><p>On va d'abord commencer par représenter les actions sur un plan rendement-volatilité. En plus de ces actions, on représentera également la frontière d'efficience, correspondant à l'ensemble des portefeuilles pouvant être créés à partir des actions de la base de données maximisant les rendements, pour chaque niveau de risque.</div>", unsafe_allow_html=True)
                  
-        pivot_stock_return = pd.read_excel(r"./FinanceQuant/Data_projet_finance.xlsx",sheet_name='Returns")
+        pivot_stock_return = pd.read_excel(r"./FinanceQuant/Data_projet_finance.xlsx",sheet_name="Returns")
         pivot_stock_return = pivot_stock_return.T
         pivot_stock_return = pivot_stock_return.reset_index()
         pivot_stock_return.columns = pivot_stock_return.iloc[0]
