@@ -449,7 +449,7 @@ elif menu == "Moyenne-Variance":
                  
         st.write("<div style='text-align: justify'><p>On va d'abord commencer par représenter les actions sur un plan rendement-volatilité. En plus de ces actions, on représentera également la frontière d'efficience, correspondant à l'ensemble des portefeuilles pouvant être créés à partir des actions de la base de données maximisant les rendements, pour chaque niveau de risque.</div>", unsafe_allow_html=True)
                  
-        pivot_stock_return = pd.read_excel(r"./FinanceQuant/Data_projet_finance.xlsx',sheet_name='Returns")
+        pivot_stock_return = pd.read_excel(r"./FinanceQuant/Data_projet_finance.xlsx",sheet_name='Returns")
         pivot_stock_return = pivot_stock_return.T
         pivot_stock_return = pivot_stock_return.reset_index()
         pivot_stock_return.columns = pivot_stock_return.iloc[0]
@@ -488,7 +488,7 @@ elif menu == "Moyenne-Variance":
         st.write("<div style='text-align: justify'><p>Ensuite, il sera intéressant de représenter l'ensemble des portefeuilles potentiellement construisables à partir de ces actions sur ce même graphique. C'est ce que nous allons réaliser dans le graphique ci-dessous. Dans le cadre de la réalisation de ce graphique sous Python, une limite de 10 000 portefeuilles représentable est fixée. Cependant, une autre représentation de l'ensemble des portefeuilles pourra être retrouvé dans le rapport final associé à cette application</div>", unsafe_allow_html=True)
         
         
-        pivot_stock_return = pd.read_excel(r"./FinanceQuant/Data_projet_finance.xlsx",sheet_name='Returns')
+        pivot_stock_return = pd.read_excel(r"./FinanceQuant/Data_projet_finance.xlsx",sheet_name="Returns")
         pivot_stock_return = pivot_stock_return.T
         pivot_stock_return = pivot_stock_return.reset_index()
         pivot_stock_return.columns = pivot_stock_return.iloc[0]
@@ -531,7 +531,7 @@ elif menu == "Moyenne-Variance":
         
         st.write("<div style='text-align: justify'><p>Nous commencerons par le représenter dans un plan rendement-volatilité</div>", unsafe_allow_html=True)
         
-        pivot_stock_return = pd.read_excel(r"./FinanceQuant/Data_projet_finance.xlsx",sheet_name='Returns')
+        pivot_stock_return = pd.read_excel(r"./FinanceQuant/Data_projet_finance.xlsx",sheet_name="Returns")
         pivot_stock_return = pivot_stock_return.T
         pivot_stock_return = pivot_stock_return.reset_index()
         pivot_stock_return.columns = pivot_stock_return.iloc[0]
@@ -597,7 +597,7 @@ elif menu == "Moyenne-Variance":
         st.header("Représentation du portefeuille équiponderant")
         st.write("<div style='text-align: justify'><p>Enfin, nous allons construire un portefeuille équipondérant. Un portefeuille équipondérant est un portefeuille composé de toutes les actions disponibles avec un poids égal. Dans le cadre de notre projet, cela correspond à l'établissement d'un portefeuille contenant les 58 actions de la base de données avec un poids similaire équivalent à 1/58 soit environ 1,72%. Ainsi, si un investisseur souhaitait investir une somme de 1000$, il faudrait investir 17,2 dollars dans chacune des 58 stocks pour constituer un portefeuille équipondéré regroupant l'ensemble des actions.</div>", unsafe_allow_html=True)
         
-        pivot_stock_return = pd.read_excel(r"./FinanceQuant/Data_projet_finance.xlsx",sheet_name='Returns')
+        pivot_stock_return = pd.read_excel(r"./FinanceQuant/Data_projet_finance.xlsx",sheet_name="Returns")
         pivot_stock_return = pivot_stock_return.T
         pivot_stock_return = pivot_stock_return.reset_index()
         pivot_stock_return.columns = pivot_stock_return.iloc[0]
