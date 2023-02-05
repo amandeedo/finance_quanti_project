@@ -655,7 +655,7 @@ else:
         st.write(" En effet, nous avons fait le choix de bonifier l'allocation des actifs ayant un bon score ESG et défavoriser  ceux en ayant un mauvais de sorte que les actifs ayant un bon score ESG ait plus de poids dans le portefeuille proposé.")
 
         st.write("Votre portefeuille sera constitué des actifs suivant : ")
-        st.image("portfolio_weights.png")
+        st.image(r"./FinanceQuant/portfolio_weights.png")
 
         st.write(" Ce sont des actifs appartenant pour la plupart au secteur de l'énergie et des matériaux.")
 
@@ -665,4 +665,4 @@ else:
                  "Notre signal vous permettra d'acheter et de vendre vos actifs à point nommé avant que la tendance ne s'inverse.")
 
         st.write("Par exemple, on constate à travers l'image ci-dessous que pour l'action HES US Equity, il est judicieux de l'acheter en 2022, quelque soit la période.")
-        st.image("HES_US_Equity.jpeg")
+        st.image(r"./FinanceQuant/HES_US_Equity.jpeg")
