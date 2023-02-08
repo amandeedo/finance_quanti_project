@@ -658,6 +658,9 @@ else:
         st.image(r"./FinanceQuant/portfolio_weights.png")
 
         st.write(" Ce sont des actifs appartenant pour la plupart au secteur de l'énergie et des matériaux.")
+        
+        st.write("Rendement du portefeuille : -7.8715")
+        st.write("Volatilité du portefeuille : 9.2776")
 
     else:
         st.write(" Afin d'adapter votre portefeuille aux variations du marché, nous avons tenter de les identifier en amont à l'aide du croisement de moyennes mobiles qui nous permet de récolter des signaux d'achat ou de vente pour chaque actif contenu dans le portefeuille.")
